@@ -1,0 +1,58 @@
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+@-webkit-keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+@-moz-keyframes fadeIn {
+	from { opacity: 0; }
+	to { opacity: 1; }
+}
+@-o-keyframes fadeIn {
+	from { opacity: 0; }
+	to { opacity: 1; }
+}
+
+body {	
+	padding-left: 30px;
+	padding-top: 20px;
+	background-image: url('bg.jpg');
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-size: 100%;
+}
+
+.about_me img {
+	float : left;
+	width: 100px;
+	height: auto;
+	-webkit-border-radius: 45px;
+	border-radius: 45px;
+	opacity: 0.8;
+}
+
+h1 { /* must use h1 instead of its id */
+	float : left;
+	padding-left: 30px;
+	padding-top: 20px;
+	font-family: Monaco, Consolas, monospace;
+	font-size: 20px;
+	color: #004422;
+	opacity: 1;
+
+	animation: fadeIn 2s;
+	-moz-animation: fadeIn 2s;
+	-webkit-animation: fadeIn 2s;
+	-o-animation: fadeIn 2s;
+
+	transition: transform 700ms, opacity 700ms;
+	-webkit-transition: -webkit-transform 700ms, opacity 700ms;
+}
+.hide {
+	opacity: 0;
+	transform: translateY(1rem);
+	-webkit-transform: translateY(1rem);
+    -ms-transform: translateY(1rem);
+}
