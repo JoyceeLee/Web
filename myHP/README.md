@@ -1,2 +1,2 @@
-myHP
+Code of my Home Page
 ====
