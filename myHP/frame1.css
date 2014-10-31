@@ -1,0 +1,75 @@
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+@-webkit-keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+@-moz-keyframes fadeIn {
+	from { opacity: 0; }
+	to { opacity: 1; }
+}
+@-o-keyframes fadeIn {
+	from { opacity: 0; }
+	to { opacity: 1; }
+}
+
+body {
+	background-image: url('bg.jpg');
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: left top;
+}
+.about_me img {
+	position: absolute;
+	left: 120px;
+	top: 20px;
+	width: 100px;
+	height: auto;
+	-webkit-border-radius: 45px;
+	border-radius: 45px;
+	opacity: 0.8;
+}
+
+.fa_connect {
+	float : right;
+	position: relative;
+	right: 20px;
+	top: 80px;
+	color: #000000;
+	opacity: 0.5;
+}
+.about_me {
+	height: 100px;
+	margin-left: auto;
+	margin-right: auto;
+	width: 90%;
+	position: fixed;
+}
+
+h1 { /* must use h1 instead of its id */
+	float : left;
+	position: absolute;
+	left: 220px;
+	top: 20px;
+	padding-left: 30px;
+	padding-top: 20px;
+	font-size: 20px;
+	color: #004422;
+	opacity: 1;
+	animation: fadeIn 2s;
+	-moz-animation: fadeIn 2s;
+	-webkit-animation: fadeIn 2s;
+	-o-animation: fadeIn 2s;
+
+	transition: transform 700ms, opacity 700ms;
+	-webkit-transition: -webkit-transform 700ms, opacity 700ms;
+}
+.hide {
+	opacity: 0;
+	transform: translateY(1rem);
+	-webkit-transform: translateY(1rem);
+    -ms-transform: translateY(1rem);
+}
