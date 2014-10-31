@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="author" content="Yang Li">
+  <title> test yangli </title>
+  <link rel="stylesheet" type="text/css" href="test.css"/>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
+  <script type="text/javascript">
+  var msg = $("#Msg").val();
+  var usrname;
+  $(document).ready(function() {
+    var interval = setInterval(chat, 1000);
+    $("form#msgform").submit(function() {
+      msg = $("#Msg").val();
+      if(msg==""){
+        alert("Please enter a message");
+      } else if(usrname==""){
+        alert("Please enter your username first");
+      } else {
+        $.ajax({
+            type: "post",
+            url: "http://104.131.149.116/test_message/test.php",
+            data: { Msg : msg, Urs : usrname},
+            success: function(data, status){},
+            error: function(xhr, status, error) {
+              console.log(xhr.readyState);
+              console.log(status);
+              console.log(error);
+            }
+        });
+      }
+      return false;
+    });
+    return false;
+  });
+  function chat() {
+    $.ajax({
+      type: "post",
+      url: "http://104.131.149.116/test_message/test.php",
+      data: { Msg : ""},
+      success: function(data, status){
+        $("#history").html(data);
+      },
+      error: function(xhr, status, error) {
+        console.log(xhr.readyState);
+        console.log(status);
+        console.log(error);
+      }
+    });
+    return false;
+  }
+  function setUrs() {
+    usrname = $("#inputurs").val();
+    $("#usr").html('<p id="inputurs">'+usrname+'</p>');
+    return false;
+  }
+  </script>
+</head>
+<body>
+  <div id="usr"><input id="inputurs" type="text" style="width:90px"></input><button type="button" onclick="setUrs();">set</button></div>
+  <h3> Typing Message Test </h3>
+  <div align="center">
+  <div id="div1">
+  <form id="msgform">
+    Type Message here:
+      <input type="text" style="width:300px" id="Msg"/>
+      <input type="submit" value="submit"/>
+  </form>
+  </div>
+  <div id="div2">
+    <div id="history"></div>
+  </div>
+  </div>
+</body>
+</html>
